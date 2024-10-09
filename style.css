@@ -1,70 +1,81 @@
-/* General Reset */
-body, html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    font-family: 'Raleway', sans-serif; /* Unique Font */
+body {
+    background-color: black;
+    color: white;
+    font-family: 'Fira Code', monospace; /* Change to your preferred font */
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box; /* Include padding in the total height/width */
+}
+.project-title {
+    margin-bottom: 20px;
+}
+
+.canvas-container {
+    display: flex;
     justify-content: center;
     align-items: center;
-    background-color: black; /* Black Background */
-    color: white; /* White Text */
+    width: 100%; /* Full width */
+    max-width: 600px; /* Limit maximum width for larger screens */
+    padding: 20px; /* Add padding to create space around the heart */
+    overflow: hidden; /* Hide overflow */
+    border: 1px solid transparent; /* Optional: For debugging or visual reference */
 }
 
-/* ASCII Heart Style */
 .ascii-heart {
-    font-size: 24px; /* Adjust as needed */
-    white-space: pre; /* Preserve whitespace */
+    font-family: 'Fira Code', monospace; /* Change to your preferred font */
+    white-space: pre; /* Maintain formatting */
     text-align: center; /* Center the ASCII art */
+    font-size: 20px; /* You can adjust this size */
+    line-height: 1.2; /* Line height for better spacing */
+    margin: 0; /* Ensure no additional margins on the heart */
+    padding: 0; /* Ensure no additional padding on the heart */
 }
 
-/* Button Container */
+
 .button-container {
-    margin-top: 20px; /* Space between ASCII art and buttons */
+    margin-top: 20px;
 }
 
-/* Button Styles */
 button {
-    background-color: black; /* Button Background */
-    color: white; /* Button Text Color */
-    border: 2px solid white; /* Light white border */
-    padding: 10px 20px; /* Padding for buttons */
-    margin: 5px; /* Margin between buttons */
-    cursor: pointer; /* Pointer on hover */
-    font-size: 16px; /* Font size for buttons */
-    border-radius: 5px; /* Rounded corners */
-    transition: background-color 0.3s, transform 0.2s; /* Transition for hover effect */
+    font-family: 'Fira Code', monospace; /* Change to your preferred font */
+    background-color: black;
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s, border 0.3s;
+    margin: 10px; /* Add margin for spacing */
 }
 
-/* Button Hover Effect */
 button:hover {
-    background-color: white; /* Change to white on hover */
-    color: black; /* Change text color to black */
-    transform: scale(1.05); /* Slightly enlarge the button */
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
-/* Responsive Styling */
+/* Responsive design adjustments */
 @media (max-width: 600px) {
     .ascii-heart {
-        font-size: 18px; /* Smaller font size on smaller screens */
-    }
-    
-    button {
-        font-size: 14px; /* Smaller font size for buttons on smaller screens */
+        font-family: 'Fira Code', monospace; /* Change to your preferred font */
+        font-size: 16px; /* Smaller font size on small screens */
     }
 }
 
 /* Existing styles */
 #ascii-heart {
-    animation: pulse 2s infinite;
+    font-family: 'Fira Code', monospace; /* Change to your preferred font */
+    animation: shine 0.5s infinite alternate; /* Change animation to shine */
 }
 
-@keyframes pulse {
-    0%, 100% {
-        transform: scale(1);
+/* New shine animation */
+@keyframes shine {
+    0% {
+        opacity: 0.5; /* Start semi-transparent */
     }
-    50% {
-        transform: scale(1.1);  /* Slightly enlarges the heart at the middle of the pulse */
+    100% {
+        opacity: 1; /* End fully opaque */
     }
 }
