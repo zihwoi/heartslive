@@ -1,0 +1,70 @@
+/* General Reset */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Raleway', sans-serif; /* Unique Font */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: black; /* Black Background */
+    color: white; /* White Text */
+}
+
+/* ASCII Heart Style */
+.ascii-heart {
+    font-size: 24px; /* Adjust as needed */
+    white-space: pre; /* Preserve whitespace */
+    text-align: center; /* Center the ASCII art */
+}
+
+/* Button Container */
+.button-container {
+    margin-top: 20px; /* Space between ASCII art and buttons */
+}
+
+/* Button Styles */
+button {
+    background-color: black; /* Button Background */
+    color: white; /* Button Text Color */
+    border: 2px solid white; /* Light white border */
+    padding: 10px 20px; /* Padding for buttons */
+    margin: 5px; /* Margin between buttons */
+    cursor: pointer; /* Pointer on hover */
+    font-size: 16px; /* Font size for buttons */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s, transform 0.2s; /* Transition for hover effect */
+}
+
+/* Button Hover Effect */
+button:hover {
+    background-color: white; /* Change to white on hover */
+    color: black; /* Change text color to black */
+    transform: scale(1.05); /* Slightly enlarge the button */
+}
+
+/* Responsive Styling */
+@media (max-width: 600px) {
+    .ascii-heart {
+        font-size: 18px; /* Smaller font size on smaller screens */
+    }
+    
+    button {
+        font-size: 14px; /* Smaller font size for buttons on smaller screens */
+    }
+}
+
+/* Existing styles */
+#ascii-heart {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);  /* Slightly enlarges the heart at the middle of the pulse */
+    }
+}
