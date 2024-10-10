@@ -1,3 +1,7 @@
+*{
+    box-sizing: border-box;
+}
+
 body {
     background-color: black;
     color: white;
@@ -6,10 +10,9 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    min-height: 100vh;
     margin: 0;
     padding: 20px;
-    box-sizing: border-box; /* Include padding in the total height/width */
 }
 .project-title {
     margin-bottom: 20px;
@@ -20,14 +23,14 @@ body {
     justify-content: center;
     align-items: center;
     width: 100%; /* Full width */
-    max-width: 600px; /* Limit maximum width for larger screens */
+    max-width: 900px; /* Limit maximum width for larger screens */
     padding: 20px; /* Add padding to create space around the heart */
     overflow: hidden; /* Hide overflow */
     border: 1px solid transparent; /* Optional: For debugging or visual reference */
 }
 
 .ascii-heart {
-    font-family: 'Fira Code', monospace; /* Change to your preferred font */
+    font-family: 'Fira Code', monospace;
     white-space: pre; /* Maintain formatting */
     text-align: center; /* Center the ASCII art */
     font-size: 20px; /* You can adjust this size */
@@ -42,7 +45,7 @@ body {
 }
 
 button {
-    font-family: 'Fira Code', monospace; /* Change to your preferred font */
+    font-family: 'Fira Code', monospace;
     background-color: black;
     color: white;
     border: 2px solid rgba(255, 255, 255, 0.3);
@@ -56,17 +59,8 @@ button:hover {
     background-color: rgba(255, 255, 255, 0.1);
 }
 
-/* Responsive design adjustments */
-@media (max-width: 600px) {
-    .ascii-heart {
-        font-family: 'Fira Code', monospace; /* Change to your preferred font */
-        font-size: 16px; /* Smaller font size on small screens */
-    }
-}
-
 /* Existing styles */
 #ascii-heart {
-    font-family: 'Fira Code', monospace; /* Change to your preferred font */
     animation: shine 0.5s infinite alternate; /* Change animation to shine */
 }
 
@@ -77,5 +71,71 @@ button:hover {
     }
     100% {
         opacity: 1; /* End fully opaque */
+    }
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+    .project-title {
+        font-size: 1.8rem;
+    }
+
+    .ascii-heart {
+        font-size: 18px; /* Slightly smaller on tablets */
+    }
+
+    .canvas-container {
+        max-width: 600px;
+        padding: 15px;
+    }
+
+    button {
+        padding: 8px 16px;
+    }
+}
+
+@media (max-width: 600px) {
+    .project-title {
+        font-size: 1.6rem;
+    }
+
+    .ascii-heart {
+        font-size: 16px; /* Reduce heart size on smaller phones */
+        line-height: 1.1; /* Tighter spacing for mobile */
+        padding: 0 10px;
+    }
+
+    .canvas-container {
+        max-width: 100%; /* Ensure it takes full width on smaller screens */
+        padding: 10px; /* Reduce padding */
+    }
+
+    button {
+        padding: 6px 12px;
+    }
+
+    .button-container {
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 400px) {
+    .project-title {
+        font-size: 1.4rem; /* Further reduce title size for very small phones */
+    }
+
+    .ascii-heart {
+        font-size: 11px; /* Smaller heart for very small screens */
+        line-height: 1.1;
+        padding: 0 5px; /* Reduce padding for tight spaces */
+    }
+
+    .canvas-container {
+        max-width: 100%; /* Full width on smallest screens */
+        padding: 5px; /* Minimal padding */
+    }
+
+    button {
+        padding: 5px 10px; /* Make buttons smaller for small devices */
     }
 }
